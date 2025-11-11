@@ -1,0 +1,19 @@
+replicaCount: 1
+deployment:
+  name: java-app-helm-deployment
+  label: java-app
+
+container:
+  name: java-app
+
+image:
+  repository: rayenabd/java-app
+  tag: v1
+
+service:
+  name: java-app-helm-service
+  selector: java-app
+  type: LoadBalancer
+  port: 8085
+
+containerPort: 8080
